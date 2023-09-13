@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"declaration": false,
+		"removeComments": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"noImplicitOverride": true,
+		"esModuleInterop": true,
+		"target": "es2022",
+		"sourceMap": true,
+		"outDir": "./dist",
+		"baseUrl": "./",
+		"incremental": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"alwaysStrict": true,
+		"newLine": "lf",
+		"noImplicitAny": false,
+		"strictBindCallApply": false,
+		"forceConsistentCasingInFileNames": false,
+		"noFallthroughCasesInSwitch": true,
+		"lib": [
+			"es2022"
+		],
+		"types": [
+			"node",
+			"@nestjs/common",
+			"express"
+		]
+	}
+}
