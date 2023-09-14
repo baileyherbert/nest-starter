@@ -1,6 +1,6 @@
 import { Logger, LogLevel } from '@baileyherbert/logging';
 import { LoggerService } from '@nestjs/common';
-import { Environment } from './environment';
+import { Environment } from '../app.environment';
 
 export const logger = new Logger('Nest');
 

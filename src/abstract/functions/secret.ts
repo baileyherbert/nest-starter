@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import { Environment } from '../environment';
+import { Environment } from '../../app.environment';
 
 /**
  * Computes a consumable, random 256-bit secret from the configured application secret using the specified number of

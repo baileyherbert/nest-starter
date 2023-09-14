@@ -1,9 +1,9 @@
 import { DataSource } from 'typeorm';
-import { Environment } from './abstract/environment';
+import { Environment } from 'src/app.environment';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
-import { CustomRepositoryConstructor } from './abstract/typeorm/decorators/CustomRepository';
-import { getEntitiesFromCustomRepositories } from './abstract/typeorm/helpers/entities';
-import { TypeOrmOptions } from './abstract/modules/CustomRepositoriesModule';
+import { CustomRepositoryConstructor } from 'src/abstract/typeorm/decorators/CustomRepository';
+import { getEntitiesFromCustomRepositories } from 'src/abstract/typeorm/helpers/entities';
+import { TypeOrmOptions } from 'src/abstract/modules/CustomRepositoriesModule';
 
 /**
  * A list of custom repositories to be loaded by TypeORM.

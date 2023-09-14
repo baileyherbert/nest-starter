@@ -1,12 +1,13 @@
 import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { config } from './typeorm';
+import { config } from './database/typeorm';
 import { CustomRepositoriesModule } from './abstract/modules/CustomRepositoriesModule';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { NullInterceptor } from './abstract/interceptors/NullInterceptor';
 import { HttpLoggerMiddleware } from './abstract/middleware/HttpLoggerMiddleware';
 import { NextFunction, Request, Response } from 'express';
 import { EventsService } from './abstract/services/events/EventService';
+import { ContainerService } from './abstract/services/ContainerService';
 
 @Module({
 	imports: [
@@ -19,6 +20,7 @@ import { EventsService } from './abstract/services/events/EventService';
 			provide: APP_INTERCEPTOR,
 			useClass: NullInterceptor,
 		},
+		ContainerService,
 		EventsService
 	],
 })

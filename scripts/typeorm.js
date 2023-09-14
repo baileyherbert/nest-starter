@@ -6,7 +6,7 @@ const args = [
 	'-r', 'ts-node/register',
 	'-r', 'tsconfig-paths/register',
 	bin,
-	'-d', './src/typeorm.ts',
+	'-d', './src/database/typeorm.ts',
 	...process.argv.slice(2)
 ];
 

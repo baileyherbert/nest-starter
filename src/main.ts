@@ -5,6 +5,7 @@ import { CustomLogger, logger } from './abstract/logger';
 import { TrimPipe } from './abstract/pipes/TrimPipe';
 import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
 import { EntityNotFoundExceptionFilter } from './abstract/filters/EntityNotFoundExceptionFilter';
+import { Environment } from './app.environment';
 import { Nest } from './abstract/globals/Nest';
 
 async function bootstrap() {
