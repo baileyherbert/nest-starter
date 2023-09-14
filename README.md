@@ -21,6 +21,27 @@ are validated at startup according to the provided schema.
 
 - See [`@baileyherbert/env`](https://github.com/baileyherbert/env) for documentation.
 
+### databases
+
+This starter comes preconfigured with TypeORM and a MySQL driver. The database connection is configured using
+environment variables.
+
+```env
+DATABASE_TYPE=mysql
+DATABASE_HOST=localhost
+DATABASE_PORT=3306
+DATABASE_USERNAME=
+DATABASE_PASSWORD=
+DATABASE_NAME=example
+```
+
+However, there's an important note here. This starter actually requires **two different databases**. The first will be
+named as configured in the variables above, `example`. The other will be named `example_staging`.
+
+The staging database is used by the `npm run typeorm` command to generate and test migrations. It is untouched during
+development, where changes to your entities are synchronized to the main database immediately. You can generally
+create this staging database and forget about it.
+
 ### database entities
 
 Each database table needs both an entity and repository class. In this starter, the ideal location for these is in a
