@@ -6,6 +6,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { NullInterceptor } from './abstract/interceptors/NullInterceptor';
 import { HttpLoggerMiddleware } from './abstract/middleware/HttpLoggerMiddleware';
 import { NextFunction, Request, Response } from 'express';
+import { EventsService } from './abstract/services/events/EventService';
 
 @Module({
 	imports: [
@@ -18,6 +19,7 @@ import { NextFunction, Request, Response } from 'express';
 			provide: APP_INTERCEPTOR,
 			useClass: NullInterceptor,
 		},
+		EventsService
 	],
 })
 export class AppModule {

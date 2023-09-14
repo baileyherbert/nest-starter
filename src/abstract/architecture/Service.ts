@@ -1,4 +1,8 @@
+import { Constructor } from '@baileyherbert/types';
 import { Loggable } from './Loggable';
+import { NestEvent } from '../services/events/Event';
+import { isConstructor } from '../functions/type-guards';
+import { Nest } from '../globals/Nest';
 
 /**
  * The base class for services.
@@ -69,6 +73,27 @@ export abstract class Service extends Loggable {
 	 */
 	protected async waitForPendingPromises(): Promise<void> {
 		await Promise.all(this._outstandingPromises);
+	}
+
+	/**
+	 * Emits an event of the specified type with the given data.
+	 * @param event A reference to the event constructor.
+	 * @param data The data to use for the event.
+	 */
+	protected emit<T>(event: Constructor<NestEvent<T>>, data: T): void;
+	protected emit<T>(event: Constructor<NestEvent<void | undefined>>): void;
+
+	/**
+	 * Emits the given event.
+	 * @param event An event instance.
+	 */
+	protected emit<T>(event: NestEvent<T>): void;
+	protected emit<T>(event: Constructor<NestEvent<T>> | NestEvent<any>, data?: T): void {
+		if (isConstructor(event)) {
+			event = new event(data, this);
+		}
+
+		Nest.events.emit(event);
 	}
 
 }
