@@ -17,7 +17,7 @@ export class HttpLoggerMiddleware implements NestMiddleware {
 				const took = Date.now() - start;
 				const agent = request.get('user-agent') || '-';
 
-				this.logger.verbose(
+				this.logger.log(
 					`${ip} "${method} ${originalUrl}" "${agent}" ${statusCode} ${took}ms`
 				);
 			});
