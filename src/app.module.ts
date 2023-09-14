@@ -6,7 +6,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { NullInterceptor } from './abstract/interceptors/NullInterceptor';
 import { HttpLoggerMiddleware } from './abstract/middleware/HttpLoggerMiddleware';
 import { NextFunction, Request, Response } from 'express';
-import { EventsService } from './abstract/services/events/EventService';
+import { EventService } from './abstract/services/events/EventService';
 import { ContainerService } from './abstract/services/ContainerService';
 
 @Module({
@@ -21,7 +21,7 @@ import { ContainerService } from './abstract/services/ContainerService';
 			useClass: NullInterceptor,
 		},
 		ContainerService,
-		EventsService
+		EventService
 	],
 })
 export class AppModule {

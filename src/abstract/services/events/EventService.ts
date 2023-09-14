@@ -9,7 +9,7 @@ import { EventRegistry } from './EventRegistry';
 import { Nest } from 'src/abstract/globals/Nest';
 
 @Injectable()
-export class EventsService extends Service {
+export class EventService extends Service {
 
 	public constructor() {
 		super();
