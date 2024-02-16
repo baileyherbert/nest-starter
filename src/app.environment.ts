@@ -16,7 +16,7 @@ export const Environment = Env.rules({
 	APP_SECRET: Env.schema.string(),
 	APP_URL: Env.schema.string().optional('http://localhost:3000'),
 	APP_PORT: Env.schema.number().optional(),
-	APP_LOGGING_LEVEL: Env.schema.enum(LogLevel).optional(),
+	APP_LOGGING_LEVEL: Env.schema.enum(LogLevel).optional().allowPartial(),
 	APP_LOGGING_REQUESTS: Env.schema.boolean().optional(true),
 	APP_TRUSTED_PROXY: (value?: string) => {
 		if (typeof value === 'string') {
