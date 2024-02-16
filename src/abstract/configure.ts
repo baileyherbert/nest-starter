@@ -24,6 +24,7 @@ export async function configure(app: NestExpressApplication) {
 			enableImplicitConversion: true,
 		},
 		forbidUnknownValues: true,
+		forbidNonWhitelisted: true,
 		skipMissingProperties: false,
 		skipUndefinedProperties: false,
 		skipNullProperties: false,
